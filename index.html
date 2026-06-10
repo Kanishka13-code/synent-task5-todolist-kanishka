@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="top-headings">
+      <h1><i class="ti ti-checklist"></i>My Tasks</h1>
+      <p>Stay on top of what matters</p>
+    </div>
+
+    <div class="input-row">
+      <input type="text" id="taskInput" placeholder="What do you need to do?" maxlength="120">
+      <button onclick="addTask()"><i class="ti ti-plus"></i> Add</button>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num purple" id="s-total">0</div>
+        <div class="stat-lbl">Total</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="s-pending">0</div>
+        <div class="stat-lbl">Pending</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num green" id="s-done">0</div>
+        <div class="stat-lbl">Done</div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" onclick="setTab('all', this)">All</button>
+      <button class="tab" onclick="setTab('active', this)">Active</button>
+      <button class="tab" onclick="setTab('done', this)">Done</button>
+    </div>
+
+   <div class="task-list" id="taskList"></div>
+
+    <button class="clear-btn" onclick="clearDone()">
+      <i class="ti ti-trash"></i> Clear completed
+    </button>
+
+  </div> <!-- closes .container -->
+  <script src="index.js"></script>
+</body>
+</html>
